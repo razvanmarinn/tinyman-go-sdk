@@ -3,7 +3,7 @@ package contracts
 import (
 	"encoding/json"
 
-	"github.com/algorand/go-algorand-sdk/crypto"
+	"github.com/algorand/go-algorand-sdk/v2/crypto"
 
 	tTypes "github.com/synycboom/tinyman-go-sdk/types"
 	tUtils "github.com/synycboom/tinyman-go-sdk/utils"
@@ -34,7 +34,7 @@ func PoolLogicSigAccount(validatorAppID, asset1ID, asset2ID uint64) (*crypto.Log
 		return nil, err
 	}
 
-	poolAccount := crypto.MakeLogicSigAccountEscrow(program, nil)
+	poolAccount, _ := crypto.MakeLogicSigAccountEscrowChecked(program, nil)
 
 	return &poolAccount, nil
 }

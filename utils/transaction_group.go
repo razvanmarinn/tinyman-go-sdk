@@ -3,12 +3,13 @@ package utils
 import (
 	"context"
 	"fmt"
+
 	"golang.org/x/crypto/ed25519"
 
-	"github.com/algorand/go-algorand-sdk/client/v2/algod"
-	"github.com/algorand/go-algorand-sdk/crypto"
-	"github.com/algorand/go-algorand-sdk/future"
-	"github.com/algorand/go-algorand-sdk/types"
+	"github.com/algorand/go-algorand-sdk/v2/client/v2/algod"
+	"github.com/algorand/go-algorand-sdk/v2/crypto"
+	"github.com/algorand/go-algorand-sdk/v2/transaction"
+	"github.com/algorand/go-algorand-sdk/v2/types"
 
 	"github.com/synycboom/tinyman-go-sdk/v1/constants"
 )
@@ -80,7 +81,8 @@ func (tg *TransactionGroup) SignWithLogicSig(account *crypto.LogicSigAccount) er
 
 	for idx, tx := range tg.transactions {
 		if tx.Sender.String() == address.String() {
-			_, stx, err := crypto.SignLogicsigTransaction(account.Lsig, tx)
+			_, stx, err := crypto.SignLogicSigTransaction(account.Lsig, tx)
+
 			if err != nil {
 				return err
 			}
@@ -105,7 +107,7 @@ func (tg *TransactionGroup) Submit(ctx context.Context, client *algod.Client, wa
 	}
 
 	if wait {
-		_, err := future.WaitForConfirmation(client, pendingTxID, constants.MaxWaitRound, ctx)
+		_, err := transaction.WaitForConfirmation(client, pendingTxID, constants.MaxWaitRound, ctx)
 		if err != nil {
 			return pendingTxID, err
 		}

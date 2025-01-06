@@ -1,15 +1,16 @@
 module github.com/synycboom/tinyman-go-sdk
 
-go 1.18
+go 1.23
+
+toolchain go1.23.4
 
 require (
-	github.com/algorand/go-algorand-sdk v1.14.1
-	golang.org/x/crypto v0.0.0-20220331220935-ae2d96664a29
+	github.com/algorand/go-algorand-sdk/v2 v2.7.0
+	golang.org/x/crypto v0.29.0
 )
 
 require (
-	github.com/algorand/go-algorand v0.0.0-20220402183304-0146fff73224 // indirect
-	github.com/algorand/go-codec/codec v1.1.8 // indirect
+	github.com/algorand/avm-abi v0.2.0 // indirect
+	github.com/algorand/go-codec/codec v1.1.10 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
-	golang.org/x/sys v0.0.0-20220403205710-6acee93ad0eb // indirect
 )

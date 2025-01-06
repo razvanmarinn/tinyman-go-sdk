@@ -1,8 +1,8 @@
 package prepare
 
 import (
-	"github.com/algorand/go-algorand-sdk/future"
-	"github.com/algorand/go-algorand-sdk/types"
+	"github.com/algorand/go-algorand-sdk/v2/transaction"
+	"github.com/algorand/go-algorand-sdk/v2/types"
 
 	"github.com/synycboom/tinyman-go-sdk/utils"
 	"github.com/synycboom/tinyman-go-sdk/v1/constants"
@@ -38,7 +38,7 @@ func MintTransactions(
 		return nil, err
 	}
 
-	tx1, err = future.MakePaymentTxn(senderAddress, poolAddress.String(), constants.MintFee, []byte("fee"), "", sp)
+	tx1, err = transaction.MakePaymentTxn(senderAddress, poolAddress.String(), constants.MintFee, []byte("fee"), "", sp)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,7 @@ func MintTransactions(
 	if asset2ID == 0 {
 		foreignAssets = []uint64{asset1ID, liquidityAssetID}
 	}
-	tx2, err = future.MakeApplicationNoOpTx(
+	tx2, err = transaction.MakeApplicationNoOpTx(
 		validatorAppID,
 		[][]byte{[]byte("mint")},
 		[]string{senderAddress},
@@ -64,24 +64,24 @@ func MintTransactions(
 		return nil, err
 	}
 
-	tx3, err = future.MakeAssetTransferTxn(senderAddress, poolAddress.String(), asset1Amount, nil, sp, "", asset1ID)
+	tx3, err = transaction.MakeAssetTransferTxn(senderAddress, poolAddress.String(), asset1Amount, nil, sp, "", asset1ID)
 	if err != nil {
 		return nil, err
 	}
 
 	if asset2ID > 0 {
-		tx4, err = future.MakeAssetTransferTxn(senderAddress, poolAddress.String(), asset2Amount, nil, sp, "", asset2ID)
+		tx4, err = transaction.MakeAssetTransferTxn(senderAddress, poolAddress.String(), asset2Amount, nil, sp, "", asset2ID)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		tx4, err = future.MakePaymentTxn(senderAddress, poolAddress.String(), asset2Amount, nil, "", sp)
+		tx4, err = transaction.MakePaymentTxn(senderAddress, poolAddress.String(), asset2Amount, nil, "", sp)
 		if err != nil {
 			return nil, err
 		}
 	}
 
-	tx5, err = future.MakeAssetTransferTxn(poolAddress.String(), senderAddress, liquidityAssetAmount, nil, sp, "", liquidityAssetID)
+	tx5, err = transaction.MakeAssetTransferTxn(poolAddress.String(), senderAddress, liquidityAssetAmount, nil, sp, "", liquidityAssetID)
 	if err != nil {
 		return nil, err
 	}

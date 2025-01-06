@@ -1,8 +1,8 @@
 package prepare
 
 import (
-	"github.com/algorand/go-algorand-sdk/future"
-	"github.com/algorand/go-algorand-sdk/types"
+	"github.com/algorand/go-algorand-sdk/v2/transaction"
+	"github.com/algorand/go-algorand-sdk/v2/types"
 
 	"github.com/synycboom/tinyman-go-sdk/utils"
 )
@@ -14,7 +14,7 @@ func AppOptInTransactions(validatorAppID uint64, senderAddress string, sp types.
 		return nil, err
 	}
 
-	tx, err := future.MakeApplicationOptInTx(
+	tx, err := transaction.MakeApplicationOptInTx(
 		validatorAppID,
 		nil,
 		nil,
@@ -41,7 +41,7 @@ func AppOptInTransactions(validatorAppID uint64, senderAddress string, sp types.
 
 // AssetOptInTransactions prepares a transaction group to opt-in an asset
 func AssetOptInTransactions(assetID uint64, senderAddress string, sp types.SuggestedParams) (*utils.TransactionGroup, error) {
-	tx, err := future.MakeAssetAcceptanceTxn(senderAddress, nil, sp, assetID)
+	tx, err := transaction.MakeAssetAcceptanceTxn(senderAddress, nil, sp, assetID)
 	if err != nil {
 		return nil, err
 	}

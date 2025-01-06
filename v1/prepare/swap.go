@@ -1,8 +1,8 @@
 package prepare
 
 import (
-	"github.com/algorand/go-algorand-sdk/future"
-	"github.com/algorand/go-algorand-sdk/types"
+	"github.com/algorand/go-algorand-sdk/v2/transaction"
+	"github.com/algorand/go-algorand-sdk/v2/types"
 
 	"github.com/synycboom/tinyman-go-sdk/utils"
 	"github.com/synycboom/tinyman-go-sdk/v1/constants"
@@ -43,7 +43,7 @@ func SwapTransactions(
 		assetOutID = asset2ID
 	}
 
-	tx1, err = future.MakePaymentTxn(senderAddress, poolAddress.String(), constants.SwapFee, []byte("fee"), "", sp)
+	tx1, err = transaction.MakePaymentTxn(senderAddress, poolAddress.String(), constants.SwapFee, []byte("fee"), "", sp)
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,7 @@ func SwapTransactions(
 		foreignAssets = []uint64{asset1ID, liquidityAssetID}
 	}
 
-	tx2, err = future.MakeApplicationNoOpTx(
+	tx2, err = transaction.MakeApplicationNoOpTx(
 		appIdx,
 		appArgs,
 		accounts,
@@ -74,24 +74,24 @@ func SwapTransactions(
 	}
 
 	if assetInID != 0 {
-		tx3, err = future.MakeAssetTransferTxn(senderAddress, poolAddress.String(), assetInAmount, nil, sp, "", assetInID)
+		tx3, err = transaction.MakeAssetTransferTxn(senderAddress, poolAddress.String(), assetInAmount, nil, sp, "", assetInID)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		tx3, err = future.MakePaymentTxn(senderAddress, poolAddress.String(), assetInAmount, nil, "", sp)
+		tx3, err = transaction.MakePaymentTxn(senderAddress, poolAddress.String(), assetInAmount, nil, "", sp)
 		if err != nil {
 			return nil, err
 		}
 	}
 
 	if assetOutID != 0 {
-		tx4, err = future.MakeAssetTransferTxn(poolAddress.String(), senderAddress, assetOutAmount, nil, sp, "", assetOutID)
+		tx4, err = transaction.MakeAssetTransferTxn(poolAddress.String(), senderAddress, assetOutAmount, nil, sp, "", assetOutID)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		tx4, err = future.MakePaymentTxn(poolAddress.String(), senderAddress, assetOutAmount, nil, "", sp)
+		tx4, err = transaction.MakePaymentTxn(poolAddress.String(), senderAddress, assetOutAmount, nil, "", sp)
 		if err != nil {
 			return nil, err
 		}

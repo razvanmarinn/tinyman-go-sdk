@@ -3,9 +3,9 @@ package utils
 import (
 	"context"
 
-	"github.com/algorand/go-algorand-sdk/client/v2/algod"
-	"github.com/algorand/go-algorand-sdk/crypto"
-	"github.com/algorand/go-algorand-sdk/future"
+	"github.com/algorand/go-algorand-sdk/v2/client/v2/algod"
+	"github.com/algorand/go-algorand-sdk/v2/crypto"
+	"github.com/algorand/go-algorand-sdk/v2/transaction"
 	"github.com/synycboom/tinyman-go-sdk/v1"
 )
 
@@ -35,7 +35,7 @@ func CreateAsset(
 	assetURL := "http://someurl"
 	assetMetadataHash := "thisIsSomeLength32HashCommitment"
 
-	txn, err := future.MakeAssetCreateTxn(addr, note, txParams,
+	txn, err := transaction.MakeAssetCreateTxn(addr, note, txParams,
 		totalIssuance, decimals, defaultFrozen, manager, reserve, freeze, clawback,
 		unitName, assetName, assetURL, assetMetadataHash,
 	)
@@ -52,7 +52,7 @@ func CreateAsset(
 		return 0, err
 	}
 
-	confirmedTxn, err := future.WaitForConfirmation(ac, txid, 4, context.Background())
+	confirmedTxn, err := transaction.WaitForConfirmation(ac, txid, 4, context.Background())
 	if err != nil {
 		return 0, err
 	}

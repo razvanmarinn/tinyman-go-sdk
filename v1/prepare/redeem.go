@@ -1,8 +1,8 @@
 package prepare
 
 import (
-	"github.com/algorand/go-algorand-sdk/future"
-	"github.com/algorand/go-algorand-sdk/types"
+	"github.com/algorand/go-algorand-sdk/v2/transaction"
+	"github.com/algorand/go-algorand-sdk/v2/types"
 
 	"github.com/synycboom/tinyman-go-sdk/utils"
 	"github.com/synycboom/tinyman-go-sdk/v1/constants"
@@ -35,7 +35,7 @@ func RedeemTransactions(
 		return nil, err
 	}
 
-	tx1, err = future.MakePaymentTxn(senderAddress, poolAddress.String(), constants.RedeemFee, []byte("fee"), "", sp)
+	tx1, err = transaction.MakePaymentTxn(senderAddress, poolAddress.String(), constants.RedeemFee, []byte("fee"), "", sp)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func RedeemTransactions(
 		foreignAssets = []uint64{asset1ID, liquidityAssetID}
 	}
 
-	tx2, err = future.MakeApplicationNoOpTx(
+	tx2, err = transaction.MakeApplicationNoOpTx(
 		validatorAppID,
 		[][]byte{[]byte("redeem")},
 		[]string{senderAddress},
@@ -63,12 +63,12 @@ func RedeemTransactions(
 	}
 
 	if assetID != 0 {
-		tx3, err = future.MakeAssetTransferTxn(poolAddress.String(), senderAddress, assetAmount, nil, sp, "", assetID)
+		tx3, err = transaction.MakeAssetTransferTxn(poolAddress.String(), senderAddress, assetAmount, nil, sp, "", assetID)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		tx3, err = future.MakePaymentTxn(poolAddress.String(), senderAddress, assetAmount, nil, "", sp)
+		tx3, err = transaction.MakePaymentTxn(poolAddress.String(), senderAddress, assetAmount, nil, "", sp)
 		if err != nil {
 			return nil, err
 		}

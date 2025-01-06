@@ -1,8 +1,8 @@
 package prepare
 
 import (
-	"github.com/algorand/go-algorand-sdk/future"
-	"github.com/algorand/go-algorand-sdk/types"
+	"github.com/algorand/go-algorand-sdk/v2/transaction"
+	"github.com/algorand/go-algorand-sdk/v2/types"
 
 	"github.com/synycboom/tinyman-go-sdk/utils"
 )
@@ -14,7 +14,7 @@ func AppOptOutTransactions(validatorAppID uint64, senderAddress string, sp types
 		return nil, err
 	}
 
-	tx, err := future.MakeApplicationClearStateTx(
+	tx, err := transaction.MakeApplicationClearStateTx(
 		validatorAppID,
 		nil,
 		nil,

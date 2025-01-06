@@ -3,8 +3,8 @@ package utils
 import (
 	"encoding/base64"
 
-	"github.com/algorand/go-algorand-sdk/client/v2/common/models"
-	"github.com/algorand/go-algorand-sdk/types"
+	"github.com/algorand/go-algorand-sdk/v2/client/v2/common/models"
+	"github.com/algorand/go-algorand-sdk/v2/types"
 )
 
 // StateInt returns unsigned int field from ApplicationLocalState local key-value mapping

@@ -3,8 +3,8 @@ package prepare
 import (
 	"fmt"
 
-	"github.com/algorand/go-algorand-sdk/future"
-	"github.com/algorand/go-algorand-sdk/types"
+	"github.com/algorand/go-algorand-sdk/v2/transaction"
+	"github.com/algorand/go-algorand-sdk/v2/types"
 
 	"github.com/synycboom/tinyman-go-sdk/utils"
 	"github.com/synycboom/tinyman-go-sdk/v1/constants"
@@ -47,7 +47,7 @@ func BootstrapTransactions(
 		bootstrapAmount = constants.BootstrapTransactionAmountForAlgo
 	}
 
-	tx1, err = future.MakePaymentTxn(senderAddress, poolAddress.String(), bootstrapAmount, nil, "", sp)
+	tx1, err = transaction.MakePaymentTxn(senderAddress, poolAddress.String(), bootstrapAmount, nil, "", sp)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func BootstrapTransactions(
 	if asset2ID == 0 {
 		foreignAssets = []uint64{asset1ID}
 	}
-	tx2, err = future.MakeApplicationOptInTx(
+	tx2, err = transaction.MakeApplicationOptInTx(
 		validatorAppID,
 		appArgs,
 		nil,
@@ -83,7 +83,7 @@ func BootstrapTransactions(
 		return nil, err
 	}
 
-	tx3, err = future.MakeAssetCreateTxn(
+	tx3, err = transaction.MakeAssetCreateTxn(
 		poolAddress.String(),
 		nil,
 		sp,
@@ -103,14 +103,14 @@ func BootstrapTransactions(
 		return nil, err
 	}
 
-	tx4, err = future.MakeAssetAcceptanceTxn(poolAddress.String(), nil, sp, asset1ID)
+	tx4, err = transaction.MakeAssetAcceptanceTxn(poolAddress.String(), nil, sp, asset1ID)
 	if err != nil {
 		return nil, err
 	}
 
 	txs := []types.Transaction{tx1, tx2, tx3, tx4}
 	if asset2ID > 0 {
-		tx, err := future.MakeAssetAcceptanceTxn(poolAddress.String(), nil, sp, asset2ID)
+		tx, err := transaction.MakeAssetAcceptanceTxn(poolAddress.String(), nil, sp, asset2ID)
 		if err != nil {
 			return nil, err
 		}
