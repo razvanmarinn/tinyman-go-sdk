@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/synycboom/tinyman-go-sdk/types"
-	"github.com/synycboom/tinyman-go-sdk/utils"
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
 )
 
 // FetchFixedInputSwapQuote returns a fixed input swap quote

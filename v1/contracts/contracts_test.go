@@ -4,8 +4,8 @@ import (
 	"encoding/base64"
 	"testing"
 
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
-	"github.com/synycboom/tinyman-go-sdk/v1/contracts"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/contracts"
 )
 
 var (

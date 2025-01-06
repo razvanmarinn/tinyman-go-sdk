@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/synycboom/tinyman-go-sdk/types"
-	"github.com/synycboom/tinyman-go-sdk/utils"
-	"github.com/synycboom/tinyman-go-sdk/v1/prepare"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/prepare"
 )
 
 // PrepareBurnTransactions prepares burn transaction and returns a transaction group

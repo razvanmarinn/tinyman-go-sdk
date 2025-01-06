@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	exampleUtils "github.com/synycboom/tinyman-go-sdk/example/utils"
-	"github.com/synycboom/tinyman-go-sdk/types"
+	exampleUtils "github.com/razvanmarinn/tinyman-go-sdk/example/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
 )
 
 // This sample is provided for demonstration purposes only.

@@ -11,7 +11,7 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/transaction"
 	"github.com/algorand/go-algorand-sdk/v2/types"
 
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
 )
 
 // TransactionGroup is a group of transaction that can be executed atomically after signing

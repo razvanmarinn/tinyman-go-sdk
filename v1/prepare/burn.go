@@ -4,9 +4,9 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/transaction"
 	"github.com/algorand/go-algorand-sdk/v2/types"
 
-	"github.com/synycboom/tinyman-go-sdk/utils"
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
-	"github.com/synycboom/tinyman-go-sdk/v1/contracts"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/contracts"
 )
 
 // BurnTransactions prepares a transaction group to burn the liquidity pool asset amount in exchange for pool assets.

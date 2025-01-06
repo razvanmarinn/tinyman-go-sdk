@@ -8,10 +8,10 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/client/v2/common/models"
 	"github.com/algorand/go-algorand-sdk/v2/crypto"
 
-	"github.com/synycboom/tinyman-go-sdk/types"
-	"github.com/synycboom/tinyman-go-sdk/utils"
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
-	"github.com/synycboom/tinyman-go-sdk/v1/contracts"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/contracts"
 )
 
 // Pool represents a liquidity pool

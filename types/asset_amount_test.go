@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/synycboom/tinyman-go-sdk/types"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
 )
 
 func TestNewAsetAmount(t *testing.T) {

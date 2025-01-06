@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/algorand/go-algorand-sdk/v2/client/v2/algod"
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
 )
 
 // Asset is an Algorand token

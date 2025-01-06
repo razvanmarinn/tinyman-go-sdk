@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/synycboom/tinyman-go-sdk/types"
-	"github.com/synycboom/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
 )
 
 // FetchMintQuote returns a mint quote

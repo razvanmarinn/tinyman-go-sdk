@@ -3,8 +3,8 @@ package pools
 import (
 	"context"
 
-	"github.com/synycboom/tinyman-go-sdk/types"
-	"github.com/synycboom/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
 )
 
 // FetchPoolPosition fetches pool position of a user

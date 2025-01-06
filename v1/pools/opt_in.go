@@ -3,8 +3,8 @@ package pools
 import (
 	"context"
 
-	"github.com/synycboom/tinyman-go-sdk/utils"
-	"github.com/synycboom/tinyman-go-sdk/v1/prepare"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/prepare"
 )
 
 // PrepareLiquidityAssetOptInTransactions prepares liquidity asset opt-in transaction and returns a transaction group

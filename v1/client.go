@@ -10,11 +10,11 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/client/v2/common/models"
 	algoTypes "github.com/algorand/go-algorand-sdk/v2/types"
 
-	"github.com/synycboom/tinyman-go-sdk/types"
-	"github.com/synycboom/tinyman-go-sdk/utils"
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
-	"github.com/synycboom/tinyman-go-sdk/v1/pools"
-	"github.com/synycboom/tinyman-go-sdk/v1/prepare"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/pools"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/prepare"
 )
 
 // Client represents the Tinyman client

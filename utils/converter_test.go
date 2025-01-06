@@ -3,7 +3,7 @@ package utils_test
 import (
 	"testing"
 
-	"github.com/synycboom/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
 )
 
 func TestConverter(t *testing.T) {

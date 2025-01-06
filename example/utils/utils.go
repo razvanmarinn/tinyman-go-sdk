@@ -9,8 +9,8 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/client/v2/algod"
 	"github.com/algorand/go-algorand-sdk/v2/crypto"
 	"github.com/algorand/go-algorand-sdk/v2/mnemonic"
-	"github.com/synycboom/tinyman-go-sdk/v1"
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
 	"golang.org/x/crypto/ed25519"
 )
 

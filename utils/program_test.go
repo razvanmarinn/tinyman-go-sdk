@@ -3,7 +3,7 @@ package utils_test
 import (
 	"testing"
 
-	tUtils "github.com/synycboom/tinyman-go-sdk/utils"
+	tUtils "github.com/razvanmarinn/tinyman-go-sdk/utils"
 )
 
 func TestEncodeValue(t *testing.T) {

@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
 )
 
 // SwapQuote represents a swap quote

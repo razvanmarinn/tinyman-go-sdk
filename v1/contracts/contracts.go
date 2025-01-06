@@ -5,8 +5,8 @@ import (
 
 	"github.com/algorand/go-algorand-sdk/v2/crypto"
 
-	tTypes "github.com/synycboom/tinyman-go-sdk/types"
-	tUtils "github.com/synycboom/tinyman-go-sdk/utils"
+	tTypes "github.com/razvanmarinn/tinyman-go-sdk/types"
+	tUtils "github.com/razvanmarinn/tinyman-go-sdk/utils"
 )
 
 //go:generate ./bundle_asc_json.sh

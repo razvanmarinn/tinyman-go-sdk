@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/synycboom/tinyman-go-sdk/types"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
 )
 
 // Program returns a program byte array to be used in LogicSig

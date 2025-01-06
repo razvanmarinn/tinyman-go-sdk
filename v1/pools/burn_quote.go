@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/synycboom/tinyman-go-sdk/types"
-	"github.com/synycboom/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/types"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
 )
 
 // FetchBurnQuote returns a burn quote

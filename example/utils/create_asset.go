@@ -6,7 +6,7 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/client/v2/algod"
 	"github.com/algorand/go-algorand-sdk/v2/crypto"
 	"github.com/algorand/go-algorand-sdk/v2/transaction"
-	"github.com/synycboom/tinyman-go-sdk/v1"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1"
 )
 
 // CreateAsset create a new asset

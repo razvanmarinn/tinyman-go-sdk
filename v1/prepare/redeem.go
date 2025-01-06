@@ -4,9 +4,9 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/transaction"
 	"github.com/algorand/go-algorand-sdk/v2/types"
 
-	"github.com/synycboom/tinyman-go-sdk/utils"
-	"github.com/synycboom/tinyman-go-sdk/v1/constants"
-	"github.com/synycboom/tinyman-go-sdk/v1/contracts"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/constants"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/contracts"
 )
 
 // RedeemTransactions prepares a transaction group to redeem a specified excess asset amount from a pool.

@@ -3,8 +3,8 @@ package pools
 import (
 	"context"
 
-	"github.com/synycboom/tinyman-go-sdk/utils"
-	"github.com/synycboom/tinyman-go-sdk/v1/prepare"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/v1/prepare"
 )
 
 // PrepareBootstrapTransactions prepares bootstrap transaction and returns a transaction group

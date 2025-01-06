@@ -4,7 +4,7 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/transaction"
 	"github.com/algorand/go-algorand-sdk/v2/types"
 
-	"github.com/synycboom/tinyman-go-sdk/utils"
+	"github.com/razvanmarinn/tinyman-go-sdk/utils"
 )
 
 // AppOptOutTransactions prepares a transaction group to opt-out of Tinyman
