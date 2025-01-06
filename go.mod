@@ -14,5 +14,3 @@ require (
 	github.com/algorand/go-codec/codec v1.1.10 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 )
-
-replace github.com/razvanmarinn/tinyman-go-sdk => github.com/razvanmarinn/tinyman-go-sdk v0.0.0-20250106231111-2f83cd5b53ca
