@@ -6,17 +6,17 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/razvanmarinn/tinyman-go-sdk/types"
+	ttypes "github.com/razvanmarinn/tinyman-go-sdk/types"
 )
 
 // Program returns a program byte array to be used in LogicSig
-func Program(definition types.Logic, variables map[string]uint64) ([]byte, error) {
+func Program(definition ttypes.Logic, variables map[string]uint64) ([]byte, error) {
 	template, err := base64.StdEncoding.DecodeString(definition.Bytecode)
 	if err != nil {
 		return nil, err
 	}
 
-	copiedVariables := make([]types.Variable, len(definition.Variables))
+	copiedVariables := make([]ttypes.Variable, len(definition.Variables))
 	copy(copiedVariables, definition.Variables)
 
 	sort.SliceStable(copiedVariables, func(i, j int) bool {
