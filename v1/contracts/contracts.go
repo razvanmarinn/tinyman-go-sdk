@@ -1,38 +1,26 @@
 package contracts
 
 import (
-	"encoding/json"
+	"encoding/base64"
+	"encoding/binary"
 
 	"github.com/algorand/go-algorand-sdk/v2/crypto"
-
-	tTypes "github.com/razvanmarinn/tinyman-go-sdk/types"
-	tUtils "github.com/razvanmarinn/tinyman-go-sdk/utils"
 )
 
-//go:generate ./bundle_asc_json.sh
-
-var asc tTypes.ASC
-
-func init() {
-	if err := json.Unmarshal(ascJson, &asc); err != nil {
-		panic(err)
-	}
-}
+var POOL_LOGICSIG_TEMPLATE = ("BoAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQBbNQA0ADEYEkQxGYEBEkSBAUM=")
 
 // PoolLogicSigAccount creates a logic signature account of the pool
 func PoolLogicSigAccount(validatorAppID, asset1ID, asset2ID uint64) (*crypto.LogicSigAccount, error) {
 	if asset2ID > asset1ID {
 		asset1ID, asset2ID = asset2ID, asset1ID
 	}
-
-	program, err := tUtils.Program(asc.Contracts.PoolLogicSig.Logic, map[string]uint64{
-		"validator_app_id": validatorAppID,
-		"asset_id_1":       asset1ID,
-		"asset_id_2":       asset2ID,
-	})
+	program, err := base64.StdEncoding.DecodeString(POOL_LOGICSIG_TEMPLATE)
 	if err != nil {
 		return nil, err
 	}
+	binary.BigEndian.PutUint64(program[3:11], validatorAppID) 
+	binary.BigEndian.PutUint64(program[11:19], asset1ID)     
+	binary.BigEndian.PutUint64(program[19:27], asset2ID)      
 
 	poolAccount, _ := crypto.MakeLogicSigAccountEscrowChecked(program, nil)
 
