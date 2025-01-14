@@ -11,10 +11,10 @@ const (
 	AlgodMainnetHost = "https://mainnet-api.algonode.cloud"
 
 	// TestnetValidatorAppIdV1_1 is the Tinyman test net validator app id version 1.1
-	TestnetValidatorAppIdV1_1 uint64 = 62368684
+	TestnetValidatorAppIdV1_1 uint64 = 148607000
 
 	// MainnetValidatorAppIdV1_1 is the Tinyman main net validator app id version 1.1
-	MainnetValidatorAppIdV1_1 uint64 = 552635992
+	MainnetValidatorAppIdV1_1 uint64 = 1002541853
 
 	// TestnetValidatorAppId is an alias for the current Tinyman test net validator app id
 	TestnetValidatorAppId = TestnetValidatorAppIdV1_1
